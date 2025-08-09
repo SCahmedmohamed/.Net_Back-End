@@ -1,42 +1,80 @@
+using System.Data;
+
 namespace CS_Advanced
 {
 
 
-    class Helper
+    #region Generic Functions
+    //class Helper
+    //{
+    //    #region Non-Generic Swap
+    //    //public static void SWAP(ref int x, ref int y)
+    //    //{
+    //    //    // This function To Swap Between 2 Integers Only
+    //    //    int temp = x;
+    //    //    x = y;
+    //    //    y = temp;
+    //    //}
+    //    //public static void SWAP(ref double x, ref double y)
+    //    //{
+    //    //    // This function To Swap Between 2 Doubles Only
+    //    //    double temp = x;
+    //    //    x = y;
+    //    //    y = temp;
+    //    //}
+
+    //    #endregion
+
+    //    #region Generic Swap
+
+    //    public static void SWAP<T>(ref T x, ref T y)
+    //    {
+    //        // <T> It's Meaning All DataTypes
+    //        // This Function Will Swap All DataTypes
+
+    //        T temp = x;
+    //        x = y;
+    //        y = temp;
+    //    }
+
+    //    #endregion
+
+    //} 
+
+    #region Linear Search
+
+    class Healper<T> where T : class
     {
-        #region Non-Generic Swap
-        //public static void SWAP(ref int x, ref int y)
-        //{
-        //    // This function To Swap Between 2 Integers Only
-        //    int temp = x;
-        //    x = y;
-        //    y = temp;
-        //}
-        //public static void SWAP(ref double x, ref double y)
-        //{
-        //    // This function To Swap Between 2 Doubles Only
-        //    double temp = x;
-        //    x = y;
-        //    y = temp;
-        //}
 
-        #endregion
-
-        #region Generic Swap
-
-        public static void SWAP<T>(ref T x, ref T y)
+        public static int ArraySearch(T[] Arr, T target) 
         {
-            // <T> It's Meaning All DataTypes
-            // This Function Will Swap All DataTypes
+            if(Arr is not null)
+            {
+                for(int i = 0; i < Arr.Length; i++)
+                {
+                    
+                    if (Arr[i] == target) return i;
+                    /// It Will Give You Exception 
+                    /// Because Generic Maybe Class or Struct 
+                    /// And Default Struct Didnt Implment "==" 
+                    /// You Have 2 Options :
+                    /// 1. Write " where T : class "
+                    /// Or
+                    /// 2. Go And Implment == in Struct 
 
-            T temp = x;
-            x = y;
-            y = temp;
+
+                    if (Arr[i].Equals(target)) return i;
+                    /// But Here : "Equals" Is Implmented in Class and Struck
+
+                }
+            }
+            return -1;
         }
+    }
 
-        #endregion
+    #endregion
 
-    } 
+    #endregion
 
 
 
@@ -45,6 +83,7 @@ namespace CS_Advanced
         static void Main(string[] args)
         {
 
+            #region Generic SWAP Ex01
             int x = 5, y = 7;
             Console.WriteLine($"X = {x}");
             Console.WriteLine($"Y = {y}");
@@ -65,9 +104,9 @@ namespace CS_Advanced
             Console.WriteLine($"B = {b}");
 
 
+            #endregion
 
-
-
+            
         }
     }
 }
