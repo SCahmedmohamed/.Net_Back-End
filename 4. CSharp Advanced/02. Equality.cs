@@ -16,12 +16,36 @@ namespace Main
      }
 
      public override bool Equals(object? obj)
-     {
-         Employee? other = (Employee?)obj; // Explicit Casting
-                                           // Unsafe Casting [May Throw Execption -> InvaildCastException]
-         return this.ID == other.ID && this.Name == other.Name;
+{
+    //Employee? other = (Employee?)obj; // Explicit Casting
+    //                                  // Unsafe Casting [May Throw Execption -> InvaildCastException]
+    //return this.ID == other.ID && this.Name == other.Name;
 
-     }
+
+
+    /// To Keep Safa Just USE ( Is || As || Generic Interface )
+
+    #region Is Conditional Operator
+    ///// 1. "is" Conditional Operator
+
+    //if(obj is Employee other) // if obj is Employee put the Value on other
+    //{
+    //    return this.ID == other.ID && this.Name == other.Name;
+    //}
+
+    //return false;
+
+    #endregion
+
+    #region As Castring Operator
+    /// 2. "as" Casting Operator 
+    // Castring Will Succed , If and Only If Obj Is "Employee"
+    // If Castring Fails , Will Return Null , No Execption WIll be Thrown
+    Employee other = obj as Employee;
+    return other != null && other.ID == ID && other.Name == Name; 
+    #endregion
+
+}
 
  }
 
