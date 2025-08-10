@@ -27,7 +27,9 @@ namespace CS_Advanced
 
     //    #region Generic Swap
 
-    //    public static void SWAP<T>(ref T x, ref T y)
+    //    public static void SWAP<T>(ref T x, ref T y) /// where T : Class
+                                                       /// Where T : IComparable
+                                                       
     //    {
     //        // <T> It's Meaning All DataTypes
     //        // This Function Will Swap All DataTypes
