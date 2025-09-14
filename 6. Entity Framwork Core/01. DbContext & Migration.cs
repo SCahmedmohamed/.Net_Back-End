@@ -53,6 +53,8 @@ namespace Demo
     {
         static void Main(string[] args)
         {
+            /// When You Want To Open Connection With DB You Need To Create Object From Dbcontext Class
+            /// And When You End You Have To End Connections 
             /// To End Connections You Have 2 Ways 
             //[1] By Using "Dispose();"
             MyCompanyDbContext Context01 = new MyCompanyDbContext(); // Start Connection
