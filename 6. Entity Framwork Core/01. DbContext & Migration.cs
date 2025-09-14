@@ -53,6 +53,16 @@ namespace Demo
     {
         static void Main(string[] args)
         {
+            /// To End Connections You Have 2 Ways 
+            //[1] By Using "Dispose();"
+            MyCompanyDbContext Context01 = new MyCompanyDbContext(); // Start Connection
+            // DataBase Opeartions
+            // DataBase Opeartions
+            Context01.Dispose();
+
+            //[2] By Using "Using"
+            /// Using Will Dispose Automatically When You End
+            using MyCompanyDbContext Context = new MyCompanyDbContext();
 
             #region Before Migration
 
