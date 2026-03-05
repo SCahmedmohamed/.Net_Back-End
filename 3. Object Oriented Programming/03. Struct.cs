@@ -16,8 +16,8 @@ namespace Main
         #region Default Constructor
         // By default at Struct , Compiler Will Generate Parameterless Constructor
         // This Constructor Initialize The Attributes of Struct With Default Value Of Attributes
-        // int --> 0 , Double --> 0.0 , book --> false , char --> '\0' , string --> null
-        // It Mean You Havent to Create This Constructor -->
+        // int --> 0 , Double --> 0.0 , bool --> false , char --> '\0' , string --> null
+        // It Means You Haven't to Create This Constructor -->
         //
         /*public Point()
         {
