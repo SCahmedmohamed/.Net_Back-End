@@ -67,7 +67,7 @@ namespace Main
 
 
             type.A = 10;
-            /// type.B = 20; // Invilad : You Cant See {B} in Child 
+            /// type.B = 20; // Invilad : You Cant See {B} in Parent 
 
             type.Fun01();
             /// Static Binding [Early Binding] :
